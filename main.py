@@ -118,7 +118,8 @@ def send_socket_control(data):
 # process the ls command by parsing path and sending via control
 def lsCommand(url):
     # path parse
-    ar = url.split("/")
+    ar = url.split("/", 3)
+    print(ar)
     data = "LIST /" + ar[3] + "\r\n"
     print(send_socket_control(data))
 
@@ -126,7 +127,8 @@ def lsCommand(url):
 # process the retr command by parsing path and sending via control
 def retrCommand(url):
     # path parse
-    ar = url.split("/")
+    ar = url.split("/",3)
+    print(ar)
     data = "RETR /" + ar[3] + "\r\n"
     print(send_socket_control(data))
 
@@ -134,7 +136,8 @@ def retrCommand(url):
 # process the store command by parsing path and sending via control
 def storCommand(url):
     # path parse
-    ar = url.split("/")
+    ar = url.split("/",3)
+    print(ar)
     data = "STOR /" + ar[3] + "\r\n"
     print(send_socket_control(data))
 
@@ -209,21 +212,24 @@ def parse_pass_user(url):
 
 # processes a mkdir on the server
 def mkdir(url):
-    ar = url.split("/")
+    ar = url.split("/",3)
+    print(ar)
     data = "MKD /" + ar[3] + "\r\n"
     print(send_socket_control(data))
 
 
 # processes a mkdir on the server
 def rmdir(url):
-    ar = url.split("/")
+    ar = url.split("/",3)
+    print(ar)
     data = "RMD /" + ar[3] + "\r\n"
     print(send_socket_control(data))
 
 
 # processes a DELE command on server
 def dele(url):
-    ar = url.split("/")
+    ar = url.split("/",3)
+    print(ar)
     data = "DELE /" + ar[3] + "\r\n"
     print(send_socket_control(data))
 
