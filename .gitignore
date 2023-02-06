@@ -1,4 +1,5 @@
 .idea
 venv/
+main.py
 hello1.txt
 hello.txt
